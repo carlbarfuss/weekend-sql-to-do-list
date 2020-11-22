@@ -13,10 +13,11 @@ header {
 #list {
     text-align: center;
 }
-table {
-    margin: 5%;
-}
 
+.form-group {
+    padding-left: 10%;
+    padding-right: 10%;
+}
 
 .btn-deleteToDo {
     background-color: red;
@@ -29,4 +30,8 @@ table {
 }
 .false {
     font-weight: bold;
+}
+
+th {
+    text-align: center;
 }
