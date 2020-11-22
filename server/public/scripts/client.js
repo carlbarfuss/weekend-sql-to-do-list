@@ -129,15 +129,17 @@ function setDoneStatus(toDoId, isCompleted) {
 }
 
 function deleteToDo( toDoId ) {
-  $.ajax({
-    method: 'DELETE',
-    url: `/todo/${toDoId}`
-  })
-    .then(function (response) {
-      getToDo();
+  if( confirm("Are you sure you want to delete this?")){
+    $.ajax({
+      method: 'DELETE',
+      url: `/todo/${toDoId}`
     })
-    .catch(function (error) {
-      console.log('Error:', error);
-      alert('Something bad happened. Try again later');
-    })
+      .then(function (response) {
+        getToDo();
+      })
+      .catch(function (error) {
+        console.log('Error:', error);
+        alert('Something bad happened. Try again later');
+      })
+  }
 }
