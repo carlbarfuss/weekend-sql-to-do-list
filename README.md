@@ -19,7 +19,6 @@ Link to software that is required to install the app (e.g. node).
 
 - [Node.js](https://nodejs.org/en/)
 - [Bootstrap](getbootstrap.com)
-- 
 
 ## Installation
 
@@ -36,10 +35,10 @@ If your application has secret keys (for example --  Twilio), make sure you tell
 
 ## Built With
 
-[Node.js](https://nodejs.org/en/)
-[Bootstrap](getbootstrap.com)
-Visual Studio Code
-Postico
+- [Node.js](https://nodejs.org/en/)
+- [Bootstrap](getbootstrap.com)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Postico](https://eggerapps.at/postico/)
 
 
 ## Acknowledgement
