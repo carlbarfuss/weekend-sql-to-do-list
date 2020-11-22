@@ -16,3 +16,17 @@ header {
 table {
     margin: 5%;
 }
+
+
+.btn-deleteToDo {
+    background-color: red;
+}
+
+.true {
+    text-decoration: line-through;
+    font-style: italic;
+    color: rgb(138, 133, 133);
+}
+.false {
+    font-weight: bold;
+}

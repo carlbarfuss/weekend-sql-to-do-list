@@ -33,8 +33,14 @@ toDoRouter.post('/', (req, res) => {
 // PUT
 toDoRouter.put('/:toDoId', (req, res) => {
     let id = req.params.toDoId;
-    console.log(`Updating task with id=${id}`);
-    let sqlText = `UPDATE todo SET "completed"=TRUE where id=$1;`; 
+    let status = req.body.completed;
+    console.log(`Updating task with id=${id} where status=${status}`)
+    let sqlText = '';
+    if( status === "true"){ 
+        sqlText = `UPDATE todo SET "completed"=FALSE where id=$1;`;
+    } else {
+        sqlText = `UPDATE todo SET "completed"=TRUE where id=$1;`;
+    } 
     pool.query( sqlText, [id] )
         .then( (result) => {
             res.sendStatus(200);

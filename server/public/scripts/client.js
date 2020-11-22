@@ -28,14 +28,14 @@ function setupClickListeners() {
   
   $('#viewToDo').on ('click', '.btn-completed', function () {
     toDoId = $(this).closest('tr').data('id');
-    toDoCompleted = $(this).data('toDoComplete');
-    setDoneStatus (toDoId, toDoCompleted);
+    isCompleted = $(this).data('completed');
+    setDoneStatus(toDoId, isCompleted);
   });
   
   $('#viewToDo').on('click', '.btn-uncompleted', function () {
     toDoId = $(this).closest('tr').data('id');
-    toDoCompleted = $(this).data('toDoComplete');
-    setDoneStatus(toDoId, toDoCompleted);
+    isCompleted = $(this).data('completed');
+    setDoneStatus(toDoId, isCompleted);
   });
 
   $('#viewToDo').on ('click', '.btn-deleteToDo', function () {
@@ -58,7 +58,7 @@ function getToDo(){
     console.log(response);
     // append data to the DOM
     for (let i = 0; i < response.length; i++) {
-      html = `<tr data-id="${response[i].id}">
+      html = `<tr class="${response[i].completed}" data-id="${response[i].id}">
                     <td>${response[i].task}</td>
                     <td>${response[i].notes}</td>
                     <td>${response[i].date_due}</td>                   
@@ -112,12 +112,12 @@ function addToDo( toDo ){
 }
 
 
-function setDoneStatus(toDoId, toDoCompleted) {
-  console.log (`koalaInfo in fn - id: ${toDoId} RFT: ${toDoCompleted}`);
+function setDoneStatus(toDoId, isCompleted) {
+  console.log(toDoId, isCompleted);
   $.ajax({
     method: 'PUT',
     url: `/todo/${toDoId}`,
-    data: toDoCompleted
+    data: { completed: isCompleted }
   })
     .then(function (response) {
       getToDo();
