@@ -73,7 +73,7 @@ function getToDo(){
                 </td>`
       }
       html += `<td>                   
-                  <button class="btn-deleteToDo">Delete</button>
+                  <button class="btn-deleteToDo" class="btn-danger">Delete</button>
                 </td>
                 `;
       $('#viewToDo').append(html)
