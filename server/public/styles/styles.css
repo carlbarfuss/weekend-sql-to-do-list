@@ -1,0 +1,18 @@
+body {
+    background-image: url(../images/legal-pad-background.png);
+}
+
+header {
+    text-align: center;
+}
+
+#addTask {
+    text-align: center;
+}
+
+#list {
+    text-align: center;
+}
+table {
+    margin: 5%;
+}
